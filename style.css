@@ -1,0 +1,518 @@
+body {
+   font-family: "Montserrat", serif;
+   margin: 0;
+   background-color: black;
+   color: white;
+   overflow: hidden;
+}
+
+/* Headbar styles */
+.headbar {
+   display: flex;
+   align-items: center;
+   background-color: #121212;
+   width: 100%;
+   height: 65px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   border-bottom: 1px solid #333;
+   padding: 0 20px;
+}
+
+/* Spotify logo styles */
+.spotify-logo {
+   height: 40px;
+   margin-right: 185px; /* Space between the logo and the home button */
+   padding: 5px;
+   border-radius: 50%;
+}
+
+.spotify-logo:hover {
+   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Home button styles */
+.home-button {
+   color: white;
+   font-size: 20px;
+   margin-right: 50px; /* Space between the home button and the search bar */
+   text-decoration: none;
+   padding: 9px;
+   border: 2px solid white;
+   border-radius: 50%;
+   transition: background-color 0.3s;
+}
+
+.home-button:hover {
+   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Search container styles */
+.search-container {
+   position: relative;
+   flex: 1;
+   max-width: 400px;
+}
+
+/* Search bar styles */
+.search-bar {
+   width: 75%;
+   padding: 15px 40px;
+   border: none;
+   border-radius: 20px;
+   background-color: #333;
+   color: white;
+   font-size: 17px;
+}
+
+.search-icon {
+   position: absolute;
+   left: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   color: white;
+   pointer-events: none;
+   padding: 5px;
+}
+
+/* Search bar placeholder color */
+.search-bar::placeholder {
+   color: #888;
+}
+
+/* Main layout container */
+.main {
+   display: flex;
+   height: calc(100vh - 140px);
+   margin-top: 65px;
+}
+
+/* Sidebar styles */
+.sidebar {
+   background-color: #121212;
+   width: 300px;
+   border-radius: 1rem;
+   overflow-y: auto;
+   padding: 10px;
+   
+}
+
+/* Library container styles */
+.library-container {
+   display: flex;
+   align-items: center; /* Align items vertically in the center */
+   padding: 10px;
+}
+
+/* Library Icon Styles */
+.library-icon {
+   width: 24px;
+   height: 24px;
+   margin-right: 10px; /* Space between the icon and the button */
+   border-radius: 15%;
+   padding: 4px;
+}
+
+.library-icon:hover {
+   background-color: #1db954;
+}
+
+/* Library Button Styles */
+.library-button {
+   background-color: transparent;
+   color: white;
+   font-size: 20px;
+   border: none;
+   border-radius: 10%;
+   margin-left: 40px;
+   text-align: center;
+   align-self: center;
+}
+
+.library-button:hover {
+   text-decoration: underline;
+}
+
+/* Create playlist card styles */
+.create-playlist-card {
+   background-color: #1F1F1F;
+   color: white;
+   padding: 20px;
+   border-radius: 12px;
+   text-align: center;
+   margin-top: 20px;
+}
+
+/* Title for the create playlist card */
+.create-playlist-card h3 {
+   font-size: 18px;
+   margin: 0;
+   margin-bottom: 15px;
+}
+
+/* Subtitle text */
+.create-playlist-card p {
+   font-size: 14px;
+   color: #b3b3b3;
+   margin: 0;
+   margin-bottom: 15px;
+}
+
+/* Create playlist button */
+.create-playlist-button {
+   background-color: white;
+   color: black;
+   border: none;
+   border-radius: 20px;
+   padding: 10px 20px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+/* Hover effect for the button */
+.create-playlist-button:hover {
+   background-color: #e0e0e0;
+}
+
+
+
+/* Main content styles */
+.main-content {
+   display: flex;
+   flex-direction: column; /* Arrange content vertically */
+   align-items: self-start;
+   background-color: black;
+   flex: 1;
+   border-radius: 1rem;
+   overflow-y: auto;
+   gap: 20px;
+   padding: 20px;
+}
+.playlist-section {
+   padding: 10px;
+   background-color: #111;
+   color: #fff;
+   border-radius: 10px;
+   margin-bottom: 10px;
+
+ }
+ 
+ .filter-buttons {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 5px;
+
+   
+ }
+ 
+ .filter-btn {
+   padding: 10px 20px;
+   background-color: #333;
+   color: #fff;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+ 
+ .filter-btn.active {
+   background-color: #fff;
+   color: #000;
+ }
+
+ .playlist-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 8px;
+ }
+ 
+ .playlist-item {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   background-color: #222;
+   padding: 6px;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+ 
+ .playlist-item:hover {
+   background-color: #333;
+ }
+ 
+ .playlist-item img {
+   width: 60px;
+   height: 60px;
+   border-radius: 5px;
+   object-fit: cover;
+   margin-right: 7px;
+ }
+ 
+ .playlist-item span {
+   font-size: 14px;
+   color: #fff;
+ }
+
+/* Popular artists text styling */
+.popular-artists {
+   font-weight: bold;
+   font-size: 24px;
+   margin-bottom: 5px;
+   color: white;
+   margin-left: 10px;
+}
+
+
+/* Container for artist cards */
+.artist-cards-container {
+   display: flex;
+   flex-direction: row; /* Arrange artist cards in a row */
+   gap: 25px; /* Space between artist cards */
+   align-items: flex-start;
+   margin-left: 10px;
+   margin-top: 1px;
+   flex-wrap: wrap;
+   width: 90%; /* Set width to control the container size */
+   transform: scale(0.9); /* Scale down the entire container and its contents */
+   transform-origin: top left; /* Anchor scaling from the top left corner */
+}
+
+/* Artist card styling */
+.artist-card {
+   height: 250px;
+   background-color: #1F1F1F;
+   width: 25%;
+
+   border-radius: 12.5px;
+   overflow: hidden;
+   text-align: center;
+   position: relative;
+   transition: background-color 0.3s ease-in-out, transform 0.2s;
+   cursor: pointer;
+   
+}
+.artist-card:nth-child(n){
+   order: 2;
+}
+
+/* Hover effect for the card */
+.artist-card:hover {
+   background-color: #292929;
+   /*transform: translateY(-7px);*/
+}
+
+/* Style for the artist image */
+.artist-image {
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   margin-top: 20px;
+   border: 3px solid white;
+   transition: transform 0.2s ease-in-out;
+}
+
+/* Adding a hover effect to scale the image */
+.artist-card:hover .artist-image {
+   /*transform: scale(1.05);*/
+}
+
+/* Style for the artist name */
+.artist-name {
+   margin-top: 20px;
+   font-size: 16px;
+   font-weight: bold;
+   color: #ffffff;
+}
+
+
+/* Custom scrollbar styles for the main content */
+.main-content::-webkit-scrollbar {
+   width: 12px;
+}
+
+.main-content::-webkit-scrollbar-track {
+   background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+   background-color: #FFFFFF4C;
+   border-radius: 2px;
+}
+
+
+
+/* Music player styles */
+.music-player {
+   background-color: #181818;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 20px;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: 65px;
+   z-index: 10;
+   color: white;
+}
+
+/* Track information styles */
+.track-info {
+   display: flex;
+   align-items: center;
+   flex-basis: 25%;
+}
+
+.album-cover {
+   width: 60px;
+   height: 60px;
+   border-radius: 5px;
+   margin-right: 15px;
+}
+
+.track-details {
+   display: flex;
+   flex-direction: column;
+}
+
+.track-name {
+   font-size: 16px;
+   font-weight: bold;
+}
+
+.playing-name {
+   font-size: 14px;
+   color: #b3b3b3;
+}
+
+/* Player controls styles */
+.player-controls {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   flex-basis: 50%;
+   justify-content: center;
+}
+
+.control-button {
+   background: none;
+   border: none;
+   color: white;
+   font-size: 18px;
+   cursor: pointer;
+   transition: color 0.3s;
+}
+
+.control-button:hover {
+   color: #1db954;
+}
+
+.play-pause {
+   font-size: 24px;
+}
+
+/* Volume control styles */
+.volume-control {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   flex-basis: 25%;
+   transform: translateX(100px); /* Shift to the left */
+}
+
+
+.volume-slider {
+   width: 100px;
+   cursor: pointer;
+}
+
+/* Style the slider track */
+.volume-slider {
+   -webkit-appearance: none; /* Remove default styling */
+   appearance: none;
+   width: 100px; /* Adjust the width as needed */
+   height: 5px; /* Thickness of the track */
+   background: #333; /* Background color of the slider track */
+   border-radius: 5px;
+   outline: none;
+}
+
+/* Style the slider thumb */
+.volume-slider::-webkit-slider-thumb {
+   -webkit-appearance: none; /* Remove default styling */
+   appearance: none;
+   width: 15px; /* Width of the thumb */
+   height: 15px; /* Height of the thumb */
+   background: #1db954; /* Color of the thumb */
+   border-radius: 50%; /* Make it circular */
+   cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+   .track-info {
+       display: none;
+   }
+
+   .volume-control {
+       display: none;
+   }
+}
+
+
+
+/* Anchor tag styling */
+a {
+   text-decoration: none;
+   color: white;
+}
+
+button {
+   background-color: #1DB954; /* Spotify Green */
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   border-radius: 25px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   display: block;
+   margin: 20px auto;
+}
+
+button:hover {
+   background-color: #1aa34a;
+   transform: scale(1.05);
+}
+
+button:active {
+   background-color: #178b3f;
+   transform: scale(0.98);
+}
+
+#playlist-container {
+   width: 80%;
+   max-width: 600px;
+   margin: 20px auto;
+   padding: 15px;
+   background-color: #121212; /* Dark Spotify Theme */
+   color: white;
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   display: none; /* Initially hidden */
+}
+
+#playlist-container.show {
+   display: block;
+}
+
+
+
+

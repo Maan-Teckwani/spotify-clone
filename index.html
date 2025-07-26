@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./Assets/logo.png">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Spotify - Web player: Music for everyone</title>
+</head>
+<body>
+    <!-- Headbar -->
+    <div class="headbar">
+        <!-- Spotify Logo -->
+        <img src="./Assets/logo.png" alt="Spotify Logo" class="spotify-logo"> <!--alt is for displaying text when image does not load-->
+    
+        <!-- Home Button -->
+        <a href="#" class="home-button">
+            <i class="fas fa-home"></i>
+        </a>
+    
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-bar" placeholder="What do you want to play?">
+        </div>
+        
+    </div>
+    
+
+    <!-- Main container for sidebar and content -->
+    <div class="main">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="library-container">
+                <img src="./Assets/library_icon.png" alt="Library Icon" class="library-icon">
+                <a class="library-button" href="#">Your Library</a>
+            </div>
+            <div class="create-playlist-card">
+                <h3>Create your first playlist</h3>
+                <p>It's easy, we'll help you</p>
+                <button class="create-playlist-button">Create playlist</button>
+            </div>
+            <button onclick="loginWithSpotify()">Login with Spotify</button>
+
+
+            <div id="playlist-container"></div>
+            <div id="search-results"></div>
+
+            <button id="greetButton">Click Me</button>
+            <p id="message"></p>
+
+            <script src="script.js"></script>
+
+            
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <div class="playlist-section">
+                <div class="filter-buttons">
+                  <button class="filter-btn active">All</button>
+                  <button class="filter-btn">Music</button>
+                  <button class="filter-btn">Podcasts</button>
+                </div>
+                <div class="playlist-grid">
+                    <div class="playlist-item">
+                      <img src="./Assets/joerogan.jpg" alt="The Joe Rogan experience" />
+                      <span>The Joe Rogan experience</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/edmplaylist.jpg" alt="EDM 2024" />
+                      <span>EDM 2024</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/allouthindi90s.jpg" alt="All out Hindi 90s" />
+                      <span>All out Hindi 90s</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/00slovehits.jpg" alt="00's love hits" />
+                      <span>00's love hits</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/jabharrymetsejal.jpg" alt="Jab Harry Met Sejal" />
+                      <span>Jab Harry Met Sejal (Original Motion Picture Soundtrack)</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/thisiscoldplay.jpg" alt="This is Coldplay" />
+                      <span>This is Coldplay</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/hothitshindi.jpg" alt="Hot hits Hindi" />
+                      <span>Hot hits Hindi</span>
+                    </div>
+                    <div class="playlist-item">
+                      <img src="./Assets/yjhdplayllist.jpg" alt="Yeh Jawaani Hai Deewani" />
+                      <span>Yeh Jawaani Hai Deewani</span>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="spotify-embed-wrapper">
+                <div class="popular-artists">Popular artists</div>
+                <div class="artist-cards-container">
+                    <div class="artist-card" title="arijit-card">
+                        <img src="./Assets/Arijit singh.jpeg" alt="Arijit Singh" class="artist-image" title="arijit-image">
+                        <div class="artist-name">Arijit Singh</div>
+                    </div>
+                    <div class="artist-card" title="arrahman-card">
+                        <img src="./Assets/Ar rahman.jpeg" alt="AR Rahman" class="artist-image" title="AR Rahman">
+                        <div class="artist-name">A R Rahman</div>
+                    </div>
+                    <div class="artist-card" title="diljit-card">
+                        <img src="./Assets/Diljit.jpeg" alt="Diljit Dosanjh" class="artist-image" title="Diljit Dosanjh">
+                        <div class="artist-name">Diljit Dosanjh</div>
+                    </div>
+                    <div class="artist-card" title="Coldplay">
+                        <img src="./Assets/coldplay.jpeg" alt="Coldplay" class="artist-image" title="Coldplay">
+                        <div class="artist-name">Coldplay</div>
+                    </div>
+                    <div class="artist-card" title="Travis Scott">
+                        <img src="./Assets/travisscott.jpeg" alt="Travis Scott" class="artist-image" title="Travis Scott">
+                        <div class="artist-name">Travis Scott</div>
+                    </div>
+                    <div class="artist-card" title="Mohit Chauhan">
+                        <img src="./Assets/mohit.jpeg" alt="Mohit Chauhan" class="artist-image" title="Mohit Chauhan">
+                        <div class="artist-name">Mohit Chauhan</div>
+                    </div>
+    
+                    
+                </div>
+
+                
+    
+    
+            </div>
+
+
+
+
+        </div>
+        
+        
+    </div>
+
+<!-- Music Player -->
+<div class="music-player">
+    <!-- Left Section: Track Information -->
+    <div class="track-info">
+        <img src="./Assets/player_cover.jpeg" alt="Album Cover" class="album-cover">
+        <div class="track-details">
+            <div class="track-name">Hawayein</div>
+            <div class="artist-name">Arijit Singh</div>
+        </div>
+    </div>
+
+    
+    <!-- Center Section: Player Controls -->
+    <div class="player-controls">
+        <button class="control-button">
+            <i class="fas fa-random"></i> <!-- Shuffle Button -->
+        </button>
+        <button class="control-button">
+            <i class="fas fa-step-backward"></i> <!-- Previous Button -->
+        </button>
+        <button class="control-button play-pause">
+            <i class="fas fa-play"></i> <!-- Play Button -->
+        </button>
+        <button class="control-button">
+            <i class="fas fa-step-forward"></i> <!-- Next Button -->
+        </button>
+        <button class="control-button">
+            <i class="fas fa-redo"></i> <!-- Repeat Button -->
+        </button>
+    </div>
+
+    <!-- Right Section: Volume Control -->
+    <div class="volume-control">
+        <i class="fas fa-volume-up"></i>
+        <input type="range" class="volume-slider" min="0" max="100" value="50">
+    </div>
+</div>
+
+<script src="spotify.js"></script>
+
+
+</body>
+
+</html>
+
+
